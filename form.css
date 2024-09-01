@@ -1,0 +1,226 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('student.jpeg') no-repeat center center fixed;
+    background-size: cover;
+    z-index: -1;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.navbar ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.navbar ul li a:hover {
+    color: #0073e6;
+}
+
+.main-container {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+header h1 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 10px;
+    animation: colorChange 5s infinite;
+}
+
+header p {
+    text-align: center;
+    color: #555;
+}
+
+.section {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.section h2 {
+    font-size: 1.8em;
+    color: #444;
+}
+
+.section p, .section ul {
+    font-size: 1.2em;
+    color: #666;
+}
+
+.register-btn {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #0073e6;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.register-btn:hover {
+    background-color: #005bb5;
+}
+
+.form-container {
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.form-container h2 {
+    color: #333;
+}
+
+.form-container label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+.form-container input[type="text"],
+.form-container input[type="tel"],
+.form-container input[type="email"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-container input[type="submit"] {
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-container input[type="submit"]:hover {
+    background-color: #218838;
+}
+
+a {
+    color: #0073e6;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Animation for color changing text */
+@keyframes colorChange {
+    0% { color: #ff0000; } /* Red */
+    25% { color: #00ff00; } /* Green */
+    50% { color: #0000ff; } /* Blue */
+    75% { color: #ff00ff; } /* Magenta */
+    100% { color: #ff0000; } /* Red */
+}
+
+/* Poster and background overlay styles */
+.poster-container {
+    display: none;
+    max-width: 800px;
+    margin: 100px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    position: relative;
+    z-index: 1000;
+}
+
+.poster-container header h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #0073e6;
+}
+
+.poster-container .poster-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.poster-container .poster-image {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.poster-container .details {
+    font-size: 1.2em;
+    color: #333;
+}
+
+.poster-container .details ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.poster-container .details li {
+    margin: 10px 0;
+}
+
+.poster-container .details p {
+    margin: 20px 0;
+}
+
+/* Background overlay */
+.background-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}

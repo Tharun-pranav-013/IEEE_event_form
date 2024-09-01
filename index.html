@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IEEE Event Registration</title>
+    <link rel="stylesheet" href="form.css">
+    <style>
+        /* Add inline CSS for the poster */
+        .poster-container {
+            display: none;
+            max-width: 800px;
+            margin: 100px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            position: relative;
+            z-index: 1000;
+        }
+
+        .poster-container header h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #0073e6;
+        }
+
+        .poster-container .poster-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .poster-container .poster-image {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .poster-container .details {
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        .poster-container .details ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .poster-container .details li {
+            margin: 10px 0;
+        }
+
+        .poster-container .details p {
+            margin: 20px 0;
+        }
+
+        /* Additional styling for the background overlay */
+        .background-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Image -->
+    <div class="background"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#about">About IEEE</a></li>
+            <li><a href="#event-details">Event Details</a></li>
+            <li><a href="#workshop-details">Workshop</a></li>
+            <li><a href="#resource-person">Resource Person</a></li>
+            <li><a href="#registration-form">Register</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <header>
+            <h1>IEEE Event 2024</h1>
+            <p>Welcome to the workshop on Neural Networks</p>
+        </header>
+
+        <!-- About IEEE Section -->
+        <section class="section" id="about">
+            <h2>About IEEE</h2>
+            <p>The IEEE Computational Intelligence Society (IEEE CIS) is a leading professional organization 
+                dedicated to advancing the theory, design, and application of computational intelligence techniques and technologies. 
+                It encompasses a broad range of research areas, including artificial intelligence, neural networks, fuzzy systems, 
+                evolutionary computation, and machine learning. The IEEE CIS supports the dissemination of knowledge through conferences, 
+                publications, and technical activities, fostering collaboration among researchers, practitioners, and educators worldwide. 
+                Its mission is to promote innovation and excellence in computational intelligence and to address complex, real-world problems 
+                through advanced computational methods</p>
+        </section>
+
+        <!-- Event Details Section -->
+        <section class="section" id="event-details">
+            <h2>Event Details</h2>
+            <ul>
+                <li>Qualification: Open to all engineering students</li>
+                <li>Venue: NMS lab,KPRiet</li>
+                <li>Date & Time: February 22, 2024, 10:00 AM - 4:00 PM</li>
+            </ul>
+        </section>
+
+        <!-- Workshop Details Section -->
+        <section class="section" id="workshop-details">
+            <h2>Workshop Details</h2>
+            <p>The IEEE KPRIET CIS students recently hosted an engaging workshop on "Hand on Workshop on Neural Network Trends and Techniques,"
+                 aiming to provide participants with insights into the latest advancements and methodologies in neural network research. 
+                 The workshop covered a range of topics, including emerging trends in deep learning architectures, innovative techniques 
+                 for training and optimizing neural networks, and practical applications of these technologies across various domains. 
+                 Participants had the opportunity to learn from experts in the field, engage in hands-on sessions, and explore real-world 
+                 case studies. The event not only highlighted current research developments but also fostered a collaborative environment 
+                 for sharing knowledge and discussing future directions in neural network technology</p>
+        </section>
+
+        <!-- Resource Person Details Section -->
+        <section class="section" id="resource-person">
+            <h2>Resource Person</h2>
+            <p>Dr. Mari Muthu, Expert in AI & Machine Learning</p>
+        </section>
+
+        <!-- Registration Form -->
+        <div id="registration-form" class="form-container">
+            <h2>Registration Form</h2>
+            <form id="eventRegistrationForm" onsubmit="return validateForm()">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+                
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+                
+                <label for="phoneNumber">Phone Number:</label>
+                <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]{10}" required>
+                
+                <label for="email">Email ID:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <input type="submit" value="Register">
+            </form>
+            <p>If already registered - <a href="#" onclick="showSignUpPage()">Click here</a></p>
+        </div>
+    </div>
+
+    <!-- Signup Form (hidden by default) -->
+    <div id="signup-form" class="form-container" style="display: none;">
+        <h2>Sign Up</h2>
+        <form id="verifyDetailsForm" onsubmit="return validateVerificationForm()">
+            <label for="verificationEmail">Email ID:</label>
+            <input type="email" id="verificationEmail" name="verificationEmail" required>
+            
+            <input type="submit" value="Verify">
+        </form>
+    </div>
+
+    <!-- Participation Details Poster (hidden by default) -->
+    <div id="poster-container" class="poster-container">
+        <header>
+            <h1>Participation Confirmation</h1>
+        </header>
+        <div class="poster-content">
+            <img src="workshop.jpeg" alt="Event Poster" class="poster-image">
+            <div class="details">
+                <h2>Congratulations!</h2>
+                <p>Thank you for registering for the IEEE Event 2024. Below are your participation details:</p>
+                <ul>
+                    <li><strong>Event:</strong> IEEE Event 2024</li>
+                    <li><strong>Date:</strong> October 5, 2024</li>
+                    <li><strong>Time:</strong> 10:00 AM - 4:00 PM</li>
+                    <li><strong>Venue:</strong> Main Auditorium, XYZ University</li>
+                </ul>
+                <p>We look forward to seeing you there!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Background Overlay -->
+    <div id="background-overlay" class="background-overlay"></div>
+
+    <script src="form.js"></script>
+    <script>
+        function validateForm() {
+            // Existing validation logic for registration form
+            return true; // Placeholder
+        }
+
+        function showSignUpPage() {
+            document.getElementById('registration-form').style.display = 'none';
+            document.getElementById('signup-form').style.display = 'block';
+        }
+
+        function validateVerificationForm() {
+            const verificationEmail = document.getElementById('verificationEmail').value;
+            if (verificationEmail === "") {
+                alert("Please enter your email to verify.");
+                return false;
+            }
+
+            // Basic email format check
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(verificationEmail)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+
+            // Hide the registration form and show the participation poster
+            document.getElementById('signup-form').style.display = 'none';
+            document.getElementById('background-overlay').style.display = 'block';
+            document.getElementById('poster-container').style.display = 'block';
+
+            return false; // Prevent form submission
+        }
+    </script>
+</body>
+</html>
